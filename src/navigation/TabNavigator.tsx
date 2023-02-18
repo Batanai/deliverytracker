@@ -6,7 +6,7 @@ import OrdersScreen from '../screens/OrdersScreen';
 import { TabRouter, useNavigation } from '@react-navigation/native';
 import { Icon } from '@rneui/themed';
 
-type TabStackParamList = {
+export type TabStackParamList = {
   customers: undefined;
   orders: undefined;
 };

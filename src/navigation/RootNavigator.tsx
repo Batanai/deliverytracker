@@ -1,9 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React, { useLayoutEffect } from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react';
 import TabNavigator from './TabNavigator';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-type RootStackParamList = {
+export type RootStackParamList = {
   maintab: undefined;
   MyModal: { userId: string; name: string };
   Order: { order: any };
@@ -11,7 +10,7 @@ type RootStackParamList = {
 
 interface Props {}
 
-const RootStack = createStackNavigator<RootStackParamList>();
+const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 const RootNavigator = (props: Props) => {
   return (
