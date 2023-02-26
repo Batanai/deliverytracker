@@ -1,11 +1,12 @@
 import React from 'react';
 import TabNavigator from './TabNavigator';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ModalScreen from '../screens/ModalScreen';
 
 export type RootStackParamList = {
   maintab: undefined;
-  MyModal: { userId: string; name: string };
-  Order: { order: any };
+  myModal: { userId: string; name: string };
+  order: { order: any };
 };
 
 interface Props {}
@@ -17,6 +18,17 @@ const RootNavigator = (props: Props) => {
     <RootStack.Navigator>
       <RootStack.Group>
         <RootStack.Screen name="maintab" component={TabNavigator} />
+      </RootStack.Group>
+
+      <RootStack.Group
+        screenOptions={{
+          presentation: 'modal',
+        }}>
+        <RootStack.Screen
+          options={{ headerShown: false }}
+          name="myModal"
+          component={ModalScreen}
+        />
       </RootStack.Group>
     </RootStack.Navigator>
   );

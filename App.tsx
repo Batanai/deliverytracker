@@ -9,7 +9,7 @@ import RootNavigator from './src/navigation/RootNavigator';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'https://solano.stepzen.net/api/delivery-tracker//__graphql',
+  uri: 'http://localhost:5001/api/delivery-tracker',
   cache: new InMemoryCache(),
 });
 

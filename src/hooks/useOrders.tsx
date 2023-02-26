@@ -8,19 +8,18 @@ type Props = {};
 const useOrders = (props: Props) => {
   const { loading, error, data } = useQuery(GET_ORDERS);
   const [orders, setOrders] = useState<Order[]>([]);
-
   useEffect(() => {
     if (!data) return;
 
-    const orders: Order[] = data.getOrders.map(({ value }: OrderResponse) => ({
+    const orders: Order[] = data?.getOrders.map(({ value }: OrderResponse) => ({
       carrier: value.carrier,
-      createAt: value.createAt,
+      createdAt: value.createdAt,
       shippingCost: value.shippingCost,
       trackingId: value.trackingId,
       Address: value.Address,
       City: value.City,
       Lat: value.Lat,
-      Long: value.Long,
+      Lng: value.Lng,
       trackingItems: value.trackingItems,
     }));
 

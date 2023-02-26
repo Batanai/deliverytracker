@@ -1,6 +1,6 @@
   type Customer = {
-    email: String
-    name: String
+    email: string
+    name: string
   }
   
   type CustomerList = {
@@ -9,14 +9,14 @@
   }
 
   type Order = {
-    carrier: String
-    createAt: Date
-    shippingCost: Int
-    trackingId: String
-    Address: String
-    City: String
-    Lat: Float
-    Long: Float
+    carrier: string
+    createdAt: string
+    shippingCost: number
+    trackingId: string
+    Address: string
+    City: string
+    Lat: number
+    Lng: number
     trackingItems: TrackingItems
   }
   
@@ -26,18 +26,23 @@
   }
 
   type Items = {
-    item_id: Int
-    name: String
-    price: Float
-    quantity: Int
+    item_id: number
+    name: string
+    price: number
+    quantity: number
   }
 
   type OrderResponse = {
     value: Order
   }
 
+  type CustomerResponse = {
+    name: ID
+    value: Customer
+  }
+
   type TrackingItems = {
-    customer_id: String
+    customer_id: string
     items: [Items]
     customer: Customer
   }

@@ -20,10 +20,11 @@ export const GET_ORDERS = gql`
         Address
         City
         Lat
-        Long
+        Lng
         carrier
-        createAt
+        createdAt
         shippingCost
+        trackingId
         trackingItems {
             customer {
             email
